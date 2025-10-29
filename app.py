@@ -85,7 +85,7 @@ st.info("Click the button below to generate a poster with a new theme!")
 if st.button("✨ Generate New Poster!", type="primary", help="A new theme is applied every time you click."):
     
     # 0. Initialize seed (different art for each button click)
-    random.seed() 
+    seed = random.seed() 
     
     # 1. Select random theme (core logic from user's code)
     style = random.choice(["pastel", "vivid", "neon", "mono", "earth"])
@@ -102,7 +102,7 @@ if st.button("✨ Generate New Poster!", type="primary", help="A new theme is ap
     
     # 3. Create palette
     palette = get_palette(mode=style, k=20)
-    n_layers = 30 # Number of layers is fixed at 30 (you can make this random too if you want!)
+    n_layers = random.randint(10,30) # Number of layers is fixed at 30 (you can make this random too if you want!)
     
     # 4. Draw layers
     for i in range(n_layers):
@@ -122,7 +122,7 @@ if st.button("✨ Generate New Poster!", type="primary", help="A new theme is ap
     ax.text(0.05, 0.95, "Generative Poster", fontsize=25, weight='bold', color='black', transform=ax.transAxes)
     ax.text(0.05, 0.91, "Week 3 • Arts & Advanced Big Data", fontsize=15, color='black', transform=ax.transAxes)
     # Also display the selected theme on the poster
-    ax.text(0.05, 0.88, f"{style} / {blob_shape}", fontsize=15, color='black', transform=ax.transAxes)
+    ax.text(0.05, 0.88, f"{style} / {blob_shape} / {n_layers} layers / seed = {seed}", fontsize=15, color='black', transform=ax.transAxes)
     
     # 6. Set canvas range
     ax.set_xlim(0, 1)
