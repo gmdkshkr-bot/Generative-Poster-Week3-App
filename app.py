@@ -77,7 +77,7 @@ def shape(center=(0.5,0.5), r=0.1, points=1000, wobble=0.15, kind="blob", sides=
 # Streamlit App UI Section
 # ----------------------------------------------------
 
-st.set_page_config(layout="wide")
+st.set_page_config(layout="normal")
 st.title("Generative Abstract Poster with Variety Style and Shape")
 st.info("Click the button below to generate a poster with a new theme!")
 
@@ -97,7 +97,7 @@ if st.button("✨ Generate New Poster!", type="primary", help="A new theme is ap
     # 2. Prepare Matplotlib Figure
     fig, ax = plt.subplots(figsize=(7, 10))
     fig.patch.set_facecolor((0, 0, 0)) # Figure entire background color
-    ax.set_facecolor((0, 0, 0))      # Plot area background color
+    ax.set_facecolor((1, 1, 1))      # Plot area background color
     ax.axis('off')
     
     # 3. Create palette
@@ -119,8 +119,8 @@ if st.button("✨ Generate New Poster!", type="primary", help="A new theme is ap
         ax.fill(x, y, color=color, alpha=alpha, edgecolor=edge_color)
 
     # 5. Add text (changed to white)
-    ax.text(0.05, 0.95, "Generative Poster", fontsize=25, weight='bold', color='white', transform=ax.transAxes)
-    ax.text(0.05, 0.91, "Week 3 • Arts & Advanced Big Data", fontsize=15, color='white', transform=ax.transAxes)
+    ax.text(0.05, 0.95, "Generative Poster", fontsize=25, weight='bold', color='black', transform=ax.transAxes)
+    ax.text(0.05, 0.91, "Week 3 • Arts & Advanced Big Data", fontsize=15, color='black', transform=ax.transAxes)
     # Also display the selected theme on the poster
     ax.text(0.05, 0.88, f"{style} / {blob_shape}", fontsize=15, color='white', transform=ax.transAxes)
     
