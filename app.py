@@ -85,8 +85,8 @@ st.info("Click the button below to generate a poster with a new theme!")
 if st.button("✨ Generate New Poster!", type="primary", help="A new theme is applied every time you click."):
     
     # 0. Initialize seed (different art for each button click)
-    seed = random.seed() 
-    seed
+    a_seed = random.randint(1,10001)
+    random.seed(a_seed)
     
     # 1. Select random theme (core logic from user's code)
     style = random.choice(["pastel", "vivid", "neon", "mono", "earth"])
