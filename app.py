@@ -122,7 +122,7 @@ if st.button("✨ Generate New Poster!", type="primary", help="A new theme is ap
     ax.text(0.05, 0.95, "Generative Poster", fontsize=25, weight='bold', color='black', transform=ax.transAxes)
     ax.text(0.05, 0.91, "Week 3 • Arts & Advanced Big Data", fontsize=15, color='black', transform=ax.transAxes)
     # Also display the selected theme on the poster
-    ax.text(0.05, 0.88, f"{style} / {blob_shape}", fontsize=15, color='white', transform=ax.transAxes)
+    ax.text(0.05, 0.88, f"{style} / {blob_shape}", fontsize=15, color='black', transform=ax.transAxes)
     
     # 6. Set canvas range
     ax.set_xlim(0, 1)
