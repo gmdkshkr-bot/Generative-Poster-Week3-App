@@ -97,7 +97,7 @@ if st.button("✨ Generate New Poster!", type="primary", help="A new theme is ap
     # 2. Prepare Matplotlib Figure
     fig, ax = plt.subplots(figsize=(7, 10))
     fig.patch.set_facecolor((1, 1, 1)) # Figure entire background color
-    ax.set_facecolor((1, 1, 1))      # Plot area background color
+    ax.set_facecolor((0, 0, 0))      # Plot area background color
     ax.axis('off')
     
     # 3. Create palette
