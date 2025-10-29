@@ -111,11 +111,11 @@ if st.button("✨ Generate New Poster!", type="primary", help="A new theme is ap
         rr = random.uniform(0.01, 0.25)
         
         # Pass the selected shape type (blob_shape) as 'kind'
-        x, y = shape(center=(cx, cy), r=rr, wobble=random.uniform(0.05, 0.9), kind=blob_shape)
+        x, y = shape(center=(cx, cy), r=rr, wobble=random.uniform(0.05, 0.2), kind=blob_shape)
         
         color = random.choice(palette)
         alpha = random.uniform(0.1, 0.9)
-        edge_color = (random.random(), random.random(), random.random(), 1)
+        edge_color = (0, 0, 0, 1)
         
         ax.fill(x, y, color=color, alpha=alpha, edgecolor=edge_color)
 
